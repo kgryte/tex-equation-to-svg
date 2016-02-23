@@ -33,7 +33,7 @@ function clbk( error, svg ) {
 	}
 	console.log( svg );
 	/*
-		<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="11.462ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 4935 1080.4" role="math" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title MathJax-SVG-1-Desc">
+		'<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="11.462ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 4935 1080.4" role="math" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title MathJax-SVG-1-Desc">
 		<title id="MathJax-SVG-1-Title">Equation</title>
 		<desc id="MathJax-SVG-1-Desc">y equals m x plus b</desc>
 		<defs aria-hidden="true">
@@ -52,7 +52,7 @@ function clbk( error, svg ) {
 		 <use xlink:href="#E1-MJMAIN-2B" x="3504" y="0"></use>
 		 <use xlink:href="#E1-MJMATHI-62" x="4505" y="0"></use>
 		</g>
-		</svg>
+		</svg>'
 	*/
 }
 ```
