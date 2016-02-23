@@ -18,7 +18,8 @@ $ npm install tex-equation-to-svg
 var tex2svg = require( 'tex-equation-to-svg' );
 ```
 
-#### tex2svg( str[, opts], clbk )
+<a name="tex2svg"></a>
+#### tex2svg( str[, options], clbk )
 
 Converts a [TeX][tex] or [LaTeX][latex] `string` to an SVG.
 
@@ -56,6 +57,44 @@ function clbk( error, svg ) {
 	*/
 }
 ```
+
+The `function` accepts the following `options`:
+*	__width__: container width in `ex` (used for linebreaking and tags). Default: `100`.
+*	__ex__: `ex` size in pixels. Default: `6`.
+*	__inline__: `boolean` indicating whether to format an input `string` as an inline equation. Default: `false`.
+*	__linebreaks__: `boolean` indicating whether to perform linebreaking. Default: `true`.
+
+By default, the `function` formats an input `string` as a displayed equation. To format the `string` as a text (inline) equation, set the `inline` option to `false`.
+
+``` javascript
+var eqn = 'y = mx + b';
+
+var opts = {
+	'inline': false;
+};
+
+tex2svg( eqn, opts, clbk );
+```
+
+
+#### tex2svg.factory( options, clbk )
+
+Creates a reusable `function`.
+
+``` javascript
+var opts = {
+	'inline': true
+};
+
+var convert = tex2svg.factory( opts, clbk );
+
+convert( 'y = mx + b' );
+convert( 'z = \\frac{1}{2}' );
+convert( 'w = \\sum_{i=0}^{n} x_i' );
+// ...
+```
+
+The factory method accepts the same `options` as [`tex2svg()`](#tex2svg).
 
 
 ## Notes

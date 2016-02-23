@@ -44,8 +44,10 @@
     "minimist": "^1.2.0",
     "update-notifier": "^0.6.0",
     "utils-copy": "^1.1.0",
+    "validate.io-boolean-primitive": "^1.0.0",
     "validate.io-function": "^1.0.2",
     "validate.io-object": "^1.0.4",
+    "validate.io-positive-integer": "^1.0.0",
     "validate.io-string-primitive": "^1.0.0"
   },
   "devDependencies": {
