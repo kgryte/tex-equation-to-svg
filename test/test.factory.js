@@ -128,6 +128,7 @@ tape( 'the function returns a function which converts an input string to an SVG'
 			t.ok( false, error.message );
 		}
 		t.equal( typeof svg, 'string', 'returns a string' );
+		t.equal( svg.substring( 0, 4 ), '<svg', 'svg tag' );
 		t.end();
 	}
 });
@@ -150,6 +151,7 @@ tape( 'the function returns a function which converts an input string to an SVG 
 			t.ok( false, error.message );
 		}
 		t.equal( typeof svg, 'string', 'returns a string' );
+		t.equal( svg.substring( 0, 4 ), '<svg', 'svg tag' );
 		t.end();
 	}
 });
