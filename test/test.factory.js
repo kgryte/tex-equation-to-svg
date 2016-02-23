@@ -3,6 +3,7 @@
 // MODULES //
 
 var tape = require( 'tape' );
+var noop = require( '@kgryte/noop' );
 var factory = require( './../lib/factory.js' );
 
 
@@ -11,4 +12,97 @@ var factory = require( './../lib/factory.js' );
 tape( 'main export is a function', function test( t ) {
 	t.equal( typeof factory, 'function', 'main export is a function' );
 	t.end();
+});
+
+tape( 'the function throws an error if provided a callback argument which is not a function', function test( t ) {
+	var values;
+	var i;
+
+	values = [
+		'5',
+		5,
+		null,
+		NaN,
+		true,
+		undefined,
+		[],
+		{}
+	];
+
+	for ( i = 0; i < values.length; i++ ) {
+		t.throws( badValue( values[i] ), TypeError, 'throws a type error when provided ' + values[i] );
+	}
+	t.end();
+
+	function badValue( value ) {
+		return function badValue() {
+			factory( {}, value );
+		};
+	}
+});
+
+tape( 'the function throws an error if provided an options argument which is not an object', function test( t ) {
+	var values;
+	var i;
+
+	values = [
+		'5',
+		5,
+		null,
+		NaN,
+		true,
+		undefined,
+		[],
+		function(){}
+	];
+
+	for ( i = 0; i < values.length; i++ ) {
+		t.throws( badValue( values[i] ), TypeError, 'throws a type error when provided ' + values[i] );
+	}
+	t.end();
+
+	function badValue( value ) {
+		return function badValue() {
+			factory( value, noop );
+		};
+	}
+});
+
+tape( 'the function throws an error if provided an invalid option', function test( t ) {
+	t.throws( foo, TypeError, 'throws type error' );
+	t.end();
+
+	function foo() {
+		factory( {'ex':null}, noop );
+	}
+});
+
+tape( 'the function returns a function which throws an error if not provided an input string', function test( t ) {
+	var tex2svg;
+	var values;
+	var i;
+
+	values = [
+		5,
+		null,
+		NaN,
+		true,
+		undefined,
+		[],
+		{},
+		function(){}
+	];
+
+	tex2svg = factory( {}, noop );
+
+	for ( i = 0; i < values.length; i++ ) {
+		t.throws( badValue( values[i] ), TypeError, 'throws a type error when provided ' + values[i] );
+	}
+	t.end();
+
+	function badValue( value ) {
+		return function badValue() {
+			tex2svg( value );
+		};
+	}
 });
