@@ -107,23 +107,6 @@ $ make view-cov
 ```
 
 
-### Browser Support
-
-This repository uses [Testling][testling] for browser testing. To run the tests in a (headless) local web browser, execute the following command in the top-level application directory:
-
-``` bash
-$ make test-browsers
-```
-
-To view the tests in a local web browser,
-
-``` bash
-$ make view-browser-tests
-```
-
-<!-- [![browser support][browsers-image]][browsers-url] -->
-
-
 ---
 ## License
 
@@ -155,4 +138,3 @@ Copyright &copy; 2016. Athan Reines.
 
 [tape]: https://github.com/substack/tape
 [istanbul]: https://github.com/gotwarlost/istanbul
-[testling]: https://ci.testling.com
