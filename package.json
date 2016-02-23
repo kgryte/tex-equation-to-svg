@@ -26,7 +26,9 @@
     "url": "git://github.com/kgryte/tex-equation-to-svg.git"
   },
   "keywords": [
+    "utilities",
     "utility",
+    "utils",
     "util",
     "svg",
     "tex",
@@ -34,7 +36,10 @@
     "convert",
     "equation",
     "eqn",
-    "output"
+    "output",
+    "cli",
+    "math",
+    "render"
   ],
   "bugs": {
     "url": "https://github.com/kgryte/tex-equation-to-svg/issues"
