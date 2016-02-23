@@ -1,6 +1,6 @@
 {
 	"svg": true,
-	"inline": true,
+	"inline": false,
 	"format": "TeX",
 	"width": 100,
 	"ex": 6,

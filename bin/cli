@@ -66,6 +66,18 @@ if ( args.version ) {
 // OPTIONS //
 
 opts = {};
+if ( args.width ) {
+	opts.width = parseInt( args.width, 10 );
+}
+if ( args.ex ) {
+	opts.ex = parseInt( args.ex, 10 );
+}
+if ( args.inline ) {
+	opts.inline = args.inline;
+}
+if ( args[ 'no-linebreaks' ] ) {
+	opts.linebreaks = false;
+}
 
 
 // TEX2SVG //

@@ -1,8 +1,13 @@
 {
-	"string": [],
+	"string": [
+		"width",
+		"ex"
+	],
 	"boolean": [
 		"help",
-		"version"
+		"version",
+		"inline",
+		"no-linebreaks"
 	],
 	"alias": {
 		"help": [
