@@ -40,6 +40,7 @@
     "url": "https://github.com/kgryte/tex-equation-to-svg/issues"
   },
   "dependencies": {
+    "mathjax-node": "^0.5.1",
     "minimist": "^1.2.0",
     "update-notifier": "^0.6.0",
     "utils-copy": "^1.1.0",
