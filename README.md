@@ -64,13 +64,13 @@ The `function` accepts the following `options`:
 *	__inline__: `boolean` indicating whether to format an input `string` as an inline equation. Default: `false`.
 *	__linebreaks__: `boolean` indicating whether to perform linebreaking. Default: `true`.
 
-By default, the `function` formats an input `string` as a displayed equation. To format the `string` as a text (inline) equation, set the `inline` option to `false`.
+By default, the `function` formats an input `string` as a displayed equation. To format the `string` as a text (inline) equation, set the `inline` option to `true`.
 
 ``` javascript
 var eqn = 'y = mx + b';
 
 var opts = {
-	'inline': false;
+	'inline': true
 };
 
 tex2svg( eqn, opts, clbk );
