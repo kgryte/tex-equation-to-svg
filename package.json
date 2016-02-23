@@ -1,6 +1,6 @@
 {
   "name": "tex-equation-to-svg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert a TeX or LaTeX string to an SVG.",
   "author": {
     "name": "Athan Reines",
