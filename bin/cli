@@ -75,7 +75,7 @@ if ( args.ex ) {
 if ( args.inline ) {
 	opts.inline = args.inline;
 }
-if ( args[ 'no-linebreaks' ] ) {
+if ( args.linebreaks === false ) {
 	opts.linebreaks = false;
 }
 
