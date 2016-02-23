@@ -106,3 +106,50 @@ tape( 'the function returns a function which throws an error if not provided an 
 		};
 	}
 });
+
+tape( 'the function returns a function which returns any errors to a provided callback', function test( t ) {
+	var tex2svg = factory( {}, clbk );
+
+	// non-existent LaTeX command...
+	tex2svg( '\\infinity' );
+
+	function clbk( error ) {
+		t.ok( error, 'returns an error' );
+		t.end();
+	}
+});
+
+tape( 'the function returns a function which converts an input string to an SVG', function test( t ) {
+	var tex2svg = factory( {}, clbk );
+	tex2svg( 'y = mx + b' );
+
+	function clbk( error, svg ) {
+		if ( error ) {
+			t.ok( false, error.message );
+		}
+		t.equal( typeof svg, 'string', 'returns a string' );
+		t.end();
+	}
+});
+
+tape( 'the function returns a function which converts an input string to an SVG (options)', function test( t ) {
+	var tex2svg;
+	var opts;
+
+	opts = {
+		'width': 200,
+		'ex': 2,
+		'inline': true,
+		'linebreaks': false
+	};
+	tex2svg = factory( opts, clbk );
+	tex2svg( 'y = mx + b' );
+
+	function clbk( error, svg ) {
+		if ( error ) {
+			t.ok( false, error.message );
+		}
+		t.equal( typeof svg, 'string', 'returns a string' );
+		t.end();
+	}
+});

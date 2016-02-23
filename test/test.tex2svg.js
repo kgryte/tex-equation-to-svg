@@ -179,3 +179,21 @@ tape( 'the function converts an input string to an SVG', function test( t ) {
 		t.end();
 	}
 });
+
+tape( 'the function converts an input string to an SVG (options)', function test( t ) {
+	var opts = {
+		'width': 200,
+		'ex': 2,
+		'inline': true,
+		'linebreaks': false
+	};
+	tex2svg( 'y = mx + b', opts, clbk );
+
+	function clbk( error, svg ) {
+		if ( error ) {
+			t.ok( false, error.message );
+		}
+		t.equal( typeof svg, 'string', 'returns a string' );
+		t.end();
+	}
+});
