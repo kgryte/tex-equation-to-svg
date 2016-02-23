@@ -157,3 +157,25 @@ tape( 'the function throws an error if provided an invalid option', function tes
 		tex2svg( 'y = mx+b', {'ex':null}, noop );
 	}
 });
+
+tape( 'the function returns any errors to the provided callback', function test( t ) {
+	// non-existent LaTeX command...
+	tex2svg( '\\infinity', clbk );
+
+	function clbk( error ) {
+		t.ok( error, 'returns an error' );
+		t.end();
+	}
+});
+
+tape( 'the function converts an input string to an SVG', function test( t ) {
+	tex2svg( 'y = mx + b', clbk );
+
+	function clbk( error, svg ) {
+		if ( error ) {
+			t.ok( false, error.message );
+		}
+		t.equal( typeof svg, 'string', 'returns a string' );
+		t.end();
+	}
+});
