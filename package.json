@@ -1,0 +1,52 @@
+{
+  "name": "tex-equation-to-svg",
+  "version": "0.0.0",
+  "description": "Convert a TeX or LaTeX string to an SVG.",
+  "author": {
+    "name": "Athan Reines",
+    "email": "kgryte@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Athan Reines",
+      "email": "kgryte@gmail.com"
+    }
+  ],
+  "bin": {
+    "tex2svg": "./bin/cli"
+  },
+  "scripts": {
+    "test": "tape \"./test/*.js\"",
+    "test-cov": "istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\"",
+    "coverage": "istanbul cover --dir ./reports/codecov/coverage --report lcovonly tape -- \"./test/*.js\" && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kgryte/tex-equation-to-svg.git"
+  },
+  "keywords": [
+		"utility",
+		"util",
+		"svg",
+		"tex",
+		"latex",
+		"convert",
+		"equation",
+		"eqn",
+		"output"
+	],
+  "bugs": {
+    "url": "https://github.com/kgryte/tex-equation-to-svg/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "codecov": "1.x.x",
+    "istanbul": "^0.4.1",
+    "jshint": "2.x.x",
+    "jshint-stylish": "2.x.x",
+    "tap-spec": "4.x.x",
+    "tape": "4.x.x"
+  },
+  "license": "MIT"
+}
