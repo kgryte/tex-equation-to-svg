@@ -2,7 +2,7 @@ tex2svg
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Convert a TeX or LaTeX `string` to an SVG.
+> Convert a [TeX][tex] or [LaTeX][latex] `string` to an SVG.
 
 
 ## Installation
@@ -20,7 +20,7 @@ var tex2svg = require( 'tex-equation-to-svg' );
 
 #### tex2svg( str[, opts], clbk )
 
-Converts a TeX or LaTeX `string` to an SVG.
+Converts a [TeX][tex] or [LaTeX][latex] `string` to an SVG.
 
 ``` javascript
 var eqn = 'y = mx + b';
@@ -60,7 +60,7 @@ function clbk( error, svg ) {
 
 ## Notes
 
-*	All TeX and LaTeX commands should be escaped.
+*	All [TeX][tex] and [LaTeX][latex] commands should be escaped.
 	
 	``` javascript
 	// Not escaped:
@@ -206,3 +206,6 @@ Copyright &copy; 2016. Athan Reines.
 
 [tape]: https://github.com/substack/tape
 [istanbul]: https://github.com/gotwarlost/istanbul
+
+[tex]: https://en.wikipedia.org/wiki/TeX
+[latex]: https://en.wikipedia.org/wiki/LaTeX
