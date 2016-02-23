@@ -26,20 +26,27 @@
     "url": "git://github.com/kgryte/tex-equation-to-svg.git"
   },
   "keywords": [
-		"utility",
-		"util",
-		"svg",
-		"tex",
-		"latex",
-		"convert",
-		"equation",
-		"eqn",
-		"output"
-	],
+    "utility",
+    "util",
+    "svg",
+    "tex",
+    "latex",
+    "convert",
+    "equation",
+    "eqn",
+    "output"
+  ],
   "bugs": {
     "url": "https://github.com/kgryte/tex-equation-to-svg/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "update-notifier": "^0.6.0",
+    "utils-copy": "^1.1.0",
+    "validate.io-function": "^1.0.2",
+    "validate.io-object": "^1.0.4",
+    "validate.io-string-primitive": "^1.0.0"
+  },
   "devDependencies": {
     "codecov": "1.x.x",
     "istanbul": "^0.4.1",

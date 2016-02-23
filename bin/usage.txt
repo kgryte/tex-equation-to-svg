@@ -1,0 +1,8 @@
+
+Usage: tex2svg [options] equation
+
+Options:
+
+  -h,  --help               Print this message.
+  -V,  --version            Print the package version.
+

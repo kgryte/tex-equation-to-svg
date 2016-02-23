@@ -1,0 +1,91 @@
+#!/usr/bin/env node
+'use strict';
+
+// MODULES //
+
+var fs = require( 'fs' );
+var path = require( 'path' );
+var parseArgs = require( 'minimist' );
+var notifier = require( 'update-notifier' );
+var pkg = require( './../package.json' );
+var opts = require( './opts.json' );
+var tex2svg = require( './../lib' );
+
+
+// VARIABLES //
+
+var args;
+
+
+// FUNCTIONS //
+
+/**
+* FUNCTION: onClose()
+*	Callback invoked upon writing a file to `stdout`.
+*
+* @private
+*/
+function onClose() {
+	process.exit( 0 );
+}
+
+
+// INIT //
+
+process.stdout.on( 'error', process.exit );
+
+
+// PACKAGE UPDATES //
+
+notifier( { 'pkg': pkg } ).notify();
+
+
+// ARGUMENTS //
+
+args = parseArgs( process.argv.slice( 2 ), opts );
+
+
+// HELP //
+
+if ( args.help ) {
+	fs.createReadStream( path.join( __dirname, 'usage.txt' ) )
+		.pipe( process.stdout )
+		.on( 'close', onClose );
+    return;
+}
+
+
+// VERSION //
+
+if ( args.version ) {
+	console.log( pkg.version );
+	return;
+}
+
+
+// OPTIONS //
+
+opts = {};
+
+
+// TEX2SVG //
+
+tex2svg( args._[0], opts, clbk );
+
+/**
+* FUNCTION: clbk( error, svg )
+*	Callback invoked upon converting an input string to an SVG.
+*
+* @private
+* @param {Error|Null} error - error object
+* @param {String} svg - output SVG
+* @returns {Void}
+*/
+function clbk( error, svg ) {
+	if ( error ) {
+		throw error;
+	}
+	process.stdout.write( svg, 'utf8' );
+	process.stdout.write( '\n', 'utf8' );
+	process.exit( 0 );
+} // end FUNCTION clbk()
