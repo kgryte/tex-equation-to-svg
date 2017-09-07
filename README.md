@@ -4,6 +4,8 @@ tex2svg
 
 > Convert a [TeX][tex] or [LaTeX][latex] `string` to an SVG.
 
+<a target="_blank" rel="nofollow" href="https://app.codesponsor.io/link/2GH3ESgBANYoWNMCAicW2LQk/kgryte/tex-equation-to-svg"><img alt="Sponsor" width="888" height="68" src="https://app.codesponsor.io/embed/2GH3ESgBANYoWNMCAicW2LQk/kgryte/tex-equation-to-svg.svg"/></a>
+
 
 ## Installation
 
